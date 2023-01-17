@@ -83,6 +83,8 @@ eval_gemfile("./Gemfile.local") if File.exist?("./Gemfile.local")
 if RUBY_PLATFORM.match?(/mswin|mingw|windows/)
   if ENV["CUSTOM_CHEF_POWERSHELL_BRANCH"]
     gem "chef-powershell", git: "https://github.com/chef/chef-powershell-shim.git", branch: ENV["CUSTOM_CHEF_POWERSHELL_BRANCH"]
+  else
+    gem "chef-powershell", git: "https://github.com/chef/chef-powershell-shim.git", branch: 'main'
   end
 
   instance_eval do
